@@ -7,32 +7,23 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    pipewire-audio \
-    pipewire-jack  \
-    cairo          \
-    cmake          \
-    alsa-lib       \
-    gdk-pixbuf2    \
-    gtk3           \
-    gtkmm3         \
+    cairo              \
+    cmake              \
+    gdk-pixbuf2        \
+    gtk3               \
+    gtkmm3             \
     hicolor-icon-theme \
-    intltool       \
-    libdecor       \
-    libepoxy       \
-    libpng         \
-    libpulse       \
-    libx11         \
-    libxext        \
-    libxml2        \
-    libxrandr      \
-    libxv          \
-    meson          \
-    minizip        \
-    nasm           \
-    portaudio      \
-    sdl2           \
-    zlib
-    #glib2 \
+    intltool           \
+    libdecor           \
+    libepoxy           \
+    libxv              \
+    meson              \
+    minizip            \
+    nasm               \
+    pipewire-audio     \
+    pipewire-jack      \
+    portaudio          \
+    sdl2
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -46,7 +37,7 @@ echo "Making nightly build of Snes9x-GTK..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/snes9xgit/snes9x"
 VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-git clone "$REPO" ./snes9x
+git clone --recursive --depth 1 "$REPO" ./snes9x
 echo "$VERSION" > ~/version
 
 cd ./snes9x
