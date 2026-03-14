@@ -57,4 +57,5 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     make install
 else
     pacman -S --noconfirm snes9x-gtk snes9x
+    pacman -Q snes9x-gtk | awk '{print $2; exit}' > ~/version
 fi
