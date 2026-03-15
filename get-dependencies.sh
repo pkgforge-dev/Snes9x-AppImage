@@ -44,8 +44,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     cd ./snes9x/unix
     ./configure \
         --prefix='/usr' \
-        --enable-netplay \
-        --with-system-zip
+        --enable-netplay
     make -j$(nproc)
     cd ../gtk
     mkdir -p build && cd build
