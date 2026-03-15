@@ -48,6 +48,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
         --with-system-zip
     make -j$(nproc)
     cd ../gtk
+    sed -i '/target_include_directories(jma PRIVATE ${INCLUDES})/a target_compile_definitions(jma PRIVATE ${DEFINES})' CMakeLists.txt #fix jma defines
     mkdir -p build && cd build
     cmake .. \
         -DCMAKE_INSTALL_PREFIX=/usr \
