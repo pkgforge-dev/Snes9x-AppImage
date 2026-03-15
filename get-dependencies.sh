@@ -44,9 +44,11 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     cd ./snes9x/unix
     ./configure \
         --prefix='/usr' \
-        --enable-netplay
+        --enable-netplay \
+        --with-system-zip
     make -j$(nproc)
     cd ../gtk
+    sed -i '/target_include_directories(jma PRIVATE ${INCLUDES})/a target_compile_definitions(jma PRIVATE ${DEFINES})' CMakeLists.txt
     mkdir -p build && cd build
     cmake .. \
         -DCMAKE_INSTALL_PREFIX=/usr \
