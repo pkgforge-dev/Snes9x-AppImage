@@ -10,7 +10,6 @@ pacman -Syu --noconfirm \
     cairo               \
     cmake               \
     gdk-pixbuf2         \
-    gtk3                \
     gtkmm3              \
     hicolor-icon-theme  \
     intltool            \
