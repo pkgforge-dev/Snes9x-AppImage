@@ -11,6 +11,7 @@ export ICON=/usr/share/icons/hicolor/256x256/apps/snes9x.png
 export DESKTOP=/usr/share/applications/snes9x-gtk.desktop
 export STARTUPWMCLASS=snes9x-gtk
 export DEPLOY_GTK=1
+export GTK_DIR=gtk-3.0
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
 export DEPLOY_PIPEWIRE=1
