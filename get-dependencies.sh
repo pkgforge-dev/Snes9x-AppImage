@@ -55,6 +55,6 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     make -j$(nproc)
     make install
 else
-    pacman -S --noconfirm snes9x-gtk snes9x
+    pacman -S --noconfirm snes9x-gtk
     pacman -Q snes9x-gtk | awk '{print $2; exit}' > ~/version
 fi
