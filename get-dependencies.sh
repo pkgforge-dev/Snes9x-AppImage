@@ -13,7 +13,6 @@ pacman -Syu --noconfirm \
     gtkmm3              \
     hicolor-icon-theme  \
     intltool            \
-    libdecor            \
     libepoxy            \
     libxv               \
     meson               \
@@ -26,7 +25,7 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of Snes9x-GTK..."
